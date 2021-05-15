@@ -21,6 +21,10 @@ class MoviesListVC: BaseViewController {
     public var objMoviesVM = MoviesViewModel()
     public var isSearchActive = false
 
+    // MARK: - Private Properties
+
+    private let refreshControl = UIRefreshControl()
+    
     // MARK: - View Controller Methods
 
     override func viewDidLoad() {
@@ -41,7 +45,28 @@ class MoviesListVC: BaseViewController {
     private func configureOnViewDidLoad() {
         setupSearchBar()
         
+        tblViewList.addSubview(refreshControl)
+        
+        // Configure Refresh Control
+        refreshControl.tintColor = #colorLiteral(red: 0.5529411765, green: 0.5333333333, blue: 0.5333333333, alpha: 1)
+        refreshControl.addTarget(self, action: #selector(refreshMoviesList), for: .valueChanged)
+        
         registerNib()
+
+        objMoviesVM.getRecentSearches { }
+        
+        objMoviesVM.getGenreList()
+
+        getMoviesList()
+        
+    }
+    
+    /// Function to refresh Movies List
+    @objc private func refreshMoviesList() {
+        objSearchBar.text = ""
+        isSearchActive = false
+        objMoviesVM.reset()
+        getMoviesList()
     }
     
     /// Function to configure search bar
@@ -57,6 +82,35 @@ class MoviesListVC: BaseViewController {
         tblViewList.registerNib(withCellClass: MovieListTblCell.self)
         tblViewList.registerNib(withCellClass: MovieSearchTblCell.self)
 
+    }
+    
+    /// Function to fecth movies from server
+    private func getMoviesList() {
+            
+        objMoviesVM.updatePageInfo(1)
+        objMoviesVM.getMoviesList { [weak self] _ in
+            self?.tblViewList?.reloadData()
+            self?.refreshControl.endRefreshing()
+        }
+    }
+    
+    // MARK: - Public Methods
+
+    /// Function to get Genre name from ids
+    /// - Parameter movie: pass object of movie here
+    /// - Returns: return Genre string
+    public func getGenresFromIds(_ movie: Movie) -> String {
+        
+        var aTempArray = [Genre]()
+        _ = movie.genreIDS?.map({
+            let aID = $0
+            _ = objMoviesVM.objGenreModel?.genres?.map({
+                if ($0.id ?? 0) == aID {
+                    aTempArray.append($0)
+                }
+            })
+        })
+        return aTempArray.map({ ($0.name ?? "") }).joined(separator: " • ")
     }
     
     /// Function to manage recent searches
@@ -90,7 +144,10 @@ class MoviesListVC: BaseViewController {
 extension MoviesListVC: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.manageRecentSearch()
+        objMoviesVM.updateSearch(searchText)
+        objMoviesVM.getSearchResults { [weak self] in
+            self?.manageRecentSearch()
+        }
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {

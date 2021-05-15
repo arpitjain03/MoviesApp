@@ -15,6 +15,10 @@
 		A959E3EF264FD1380056CC24 /* MovieReviewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A959E3EE264FD1380056CC24 /* MovieReviewsViewModel.swift */; };
 		A959E3F4264FD15F0056CC24 /* MovieReviewRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A959E3F3264FD15F0056CC24 /* MovieReviewRequestModel.swift */; };
 		A959E3F9264FD1AA0056CC24 /* MovieReviewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A959E3F8264FD1AA0056CC24 /* MovieReviewsModel.swift */; };
+		A959E40B264FF9020056CC24 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A959E405264FF9020056CC24 /* CoreDataManager.swift */; };
+		A959E40C264FF9020056CC24 /* RecentSearches+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A959E407264FF9020056CC24 /* RecentSearches+CoreDataClass.swift */; };
+		A959E40D264FF9020056CC24 /* RecentSearches+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A959E408264FF9020056CC24 /* RecentSearches+CoreDataProperties.swift */; };
+		A959E40E264FF9020056CC24 /* MoviesApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A959E409264FF9020056CC24 /* MoviesApp.xcdatamodeld */; };
 		A9EDDA19264FA287006C1C05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDDA18264FA287006C1C05 /* AppDelegate.swift */; };
 		A9EDDA30264FA288006C1C05 /* MoviesAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDDA2F264FA288006C1C05 /* MoviesAppTests.swift */; };
 		A9EDDA3B264FA288006C1C05 /* MoviesAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDDA3A264FA288006C1C05 /* MoviesAppUITests.swift */; };
@@ -91,6 +95,10 @@
 		A959E3EE264FD1380056CC24 /* MovieReviewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReviewsViewModel.swift; sourceTree = "<group>"; };
 		A959E3F3264FD15F0056CC24 /* MovieReviewRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReviewRequestModel.swift; sourceTree = "<group>"; };
 		A959E3F8264FD1AA0056CC24 /* MovieReviewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReviewsModel.swift; sourceTree = "<group>"; };
+		A959E405264FF9020056CC24 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		A959E407264FF9020056CC24 /* RecentSearches+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RecentSearches+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A959E408264FF9020056CC24 /* RecentSearches+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RecentSearches+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A959E40A264FF9020056CC24 /* MoviesApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoviesApp.xcdatamodel; sourceTree = "<group>"; };
 		A9EDDA15264FA287006C1C05 /* MoviesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9EDDA18264FA287006C1C05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9EDDA2B264FA288006C1C05 /* MoviesAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,6 +235,25 @@
 			path = MovieReviewsTblCell;
 			sourceTree = "<group>";
 		};
+		A959E404264FF9020056CC24 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				A959E405264FF9020056CC24 /* CoreDataManager.swift */,
+				A959E406264FF9020056CC24 /* RecentSearches */,
+				A959E409264FF9020056CC24 /* MoviesApp.xcdatamodeld */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		A959E406264FF9020056CC24 /* RecentSearches */ = {
+			isa = PBXGroup;
+			children = (
+				A959E407264FF9020056CC24 /* RecentSearches+CoreDataClass.swift */,
+				A959E408264FF9020056CC24 /* RecentSearches+CoreDataProperties.swift */,
+			);
+			path = RecentSearches;
+			sourceTree = "<group>";
+		};
 		A9EDDA0C264FA287006C1C05 = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +307,7 @@
 		A9EDDA54264FA312006C1C05 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				A959E404264FF9020056CC24 /* Database */,
 				A9EDDA5C264FA312006C1C05 /* CustomCode */,
 				A9EDDA6F264FA312006C1C05 /* UIControls */,
 			);
@@ -751,10 +779,12 @@
 				A959E3F4264FD15F0056CC24 /* MovieReviewRequestModel.swift in Sources */,
 				A9EDDADC264FA3AD006C1C05 /* MovieListRequestModel.swift in Sources */,
 				A9EDDA8E264FA312006C1C05 /* Segue.swift in Sources */,
+				A959E40C264FF9020056CC24 /* RecentSearches+CoreDataClass.swift in Sources */,
 				A9EDDADF264FA3AD006C1C05 /* MovieListTblCell.swift in Sources */,
 				A9EDDB09264FAA7C006C1C05 /* MovieDetailRequestModel.swift in Sources */,
 				A9EDDACF264FA3AD006C1C05 /* BaseViewController.swift in Sources */,
 				A9EDDA92264FA312006C1C05 /* UINavigationBarExtensions.swift in Sources */,
+				A959E40D264FF9020056CC24 /* RecentSearches+CoreDataProperties.swift in Sources */,
 				A9EDDA91264FA312006C1C05 /* UIImageView+Kingfisher.swift in Sources */,
 				A9EDDAD0264FA3AD006C1C05 /* BaseNavigationController.swift in Sources */,
 				A9EDDAE2264FA3AD006C1C05 /* MoviesListVC.swift in Sources */,
@@ -771,6 +801,7 @@
 				A9EDDAE3264FA3AD006C1C05 /* MovieListVC+UITableViewDelegate.swift in Sources */,
 				A9EDDB0D264FAA7C006C1C05 /* MoviesDetailColCell.swift in Sources */,
 				A959E3CF264FCB430056CC24 /* MovieReviewsVC.swift in Sources */,
+				A959E40E264FF9020056CC24 /* MoviesApp.xcdatamodeld in Sources */,
 				A9EDDB07264FAA7C006C1C05 /* SynposisModel.swift in Sources */,
 				A9EDDB0C264FAA7C006C1C05 /* MoviesDetailVC.swift in Sources */,
 				A9EDDB06264FAA7C006C1C05 /* MovieDetailViewModel.swift in Sources */,
@@ -778,6 +809,7 @@
 				A959E3E7264FCDA80056CC24 /* MovieReviewVC+UITableViewDelegate.swift in Sources */,
 				A9EDDA89264FA312006C1C05 /* Constants.swift in Sources */,
 				A9EDDAE1264FA3AD006C1C05 /* MovieListVC+UITableViewDataSource.swift in Sources */,
+				A959E40B264FF9020056CC24 /* CoreDataManager.swift in Sources */,
 				A9EDDADA264FA3AD006C1C05 /* MoviesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1143,6 +1175,19 @@
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		A959E409264FF9020056CC24 /* MoviesApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A959E40A264FF9020056CC24 /* MoviesApp.xcdatamodel */,
+			);
+			currentVersion = A959E40A264FF9020056CC24 /* MoviesApp.xcdatamodel */;
+			path = MoviesApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A9EDDA0D264FA287006C1C05 /* Project object */;
 }
