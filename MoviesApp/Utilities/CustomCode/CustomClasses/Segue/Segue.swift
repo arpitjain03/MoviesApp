@@ -10,4 +10,6 @@ struct Segue {
 
     static let moveToMovieDetails = "moveToMovieDetails"
             
+    static let moveToMovieReviews = "moveToMovieReviews"
+
 }
