@@ -48,4 +48,18 @@ class MoviesDetailVC: BaseViewController {
         cvCredits.registerNib(withCellClass: MoviesDetailColCell.self)
         cvSimilarMovies.registerNib(withCellClass: MoviesDetailColCell.self)
     }
+    
+    // MARK: - Button Action Methods
+
+    @IBAction func btnReviewsTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: Segue.moveToMovieReviews, sender: movieId)
+    }
+}
+
+extension MoviesDetailVC {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let aVC = segue.destination as? MovieReviewsVC {
+            aVC.movieId = movieId
+        }
+    }
 }
