@@ -61,7 +61,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="icon-placeholder" width="520" height="326"/>
+        <image name="icon-placeholder" width="327" height="180"/>
         <namedColor name="PrimaryText">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

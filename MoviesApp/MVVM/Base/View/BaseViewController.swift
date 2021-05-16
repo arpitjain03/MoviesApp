@@ -25,6 +25,8 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = #colorLiteral(red: 0.1294117647, green: 0.1294117647, blue: 0.1294117647, alpha: 1)
+        navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
 
     override func viewWillAppear(_ animated: Bool) {

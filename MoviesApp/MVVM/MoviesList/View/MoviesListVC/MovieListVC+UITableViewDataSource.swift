@@ -17,7 +17,7 @@ extension MoviesListVC: UITableViewDataSource {
         var count = 0
         if isSearchActive {
             if objSearchBar.text?.isEmpty ?? false && objMoviesVM.arrRecentSearches.count > 0 {
-                count = objMoviesVM.arrRecentSearches.count > 5 ? 5: objMoviesVM.arrRecentSearches.count 
+                count = objMoviesVM.arrRecentSearches.count 
             } else {
                 count = objMoviesVM.arrFilteredMovies.count
             }

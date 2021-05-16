@@ -38,7 +38,7 @@ class CoreDataManager: NSObject {
     // MARK: - Public Methods
 
     /// Function to save record in CoreData
-    /// - Parameter completion: <#completion description#>
+    /// - Parameter completion: gets success for completion
     public func saveData(completion: (Bool, Error?) -> Void) {
         do {
             try persistentContainer.viewContext.save()
@@ -69,6 +69,23 @@ class CoreDataManager: NSObject {
             completion(true, result as? [NSManagedObject], nil)
         } catch {
             completion(false, [], error)
+        }
+    }
+    
+    /// Function to delete record
+    /// - Parameters:
+    ///   - record: pass object record
+    ///   - completion: gets success for completion
+    /// - Returns:
+    public func deleteData(record: NSManagedObject, completion:(Bool, Error?)->()) {
+        
+        persistentContainer.viewContext.delete(record)
+        do {
+            try persistentContainer.viewContext.save()
+            completion(true, nil)
+        } catch {
+            print("Failed saving")
+            completion(false, error)
         }
     }
 }

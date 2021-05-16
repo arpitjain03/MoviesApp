@@ -17,6 +17,10 @@ struct AppKeys {
     static let movieDbApiKey = "c5db7df3ce826ebdb51480dfb62ede71"
 }
 
+struct ViewControllerIDs {
+    static let movieDetail = "MoviesDetailVC"
+}
+
 struct PlaceHolderImages {
     static let poster = UIImage(named: "icon-placeholder")
     static let avatar = UIImage(named: "icon-avtar")

@@ -163,17 +163,31 @@ class MoviesViewModel: NSObject {
     /// - Parameter movie: pass movie object
     public func saveRecentSearchData(_ movie: Movie) {
         
+        // If array count exceeds 5 then remove last record from Database
+        if arrRecentSearches.count >= 5 {
+            if let lastRecord = arrRecentSearches.last {
+                CoreDataManager.shared.deleteData(record: lastRecord) { (_, _) in }
+            }
+        }
         // Check if record for movieId is available or not
         CoreDataManager.shared.fetchData(entity: Entity.RecentSearches, updatePredicate: "movieId == \(movie.id ?? 0)") { (_, records, _) in
         
+            let aContext = CoreDataManager.shared.persistentContainer.viewContext
+            let aObj = RecentSearches(context: aContext)
+            aObj.movieId = movie.id?.description
+            aObj.originalTitle = movie.originalTitle
+            aObj.posterPath = movie.posterPath
+
             if records?.count == 0 {
                 // If record is not available adding new entry in database
-                let aContext = CoreDataManager.shared.persistentContainer.viewContext
-                let aObj = RecentSearches(context: aContext)
-                aObj.movieId = movie.id?.description
-                aObj.originalTitle = movie.originalTitle
-                aObj.posterPath = movie.posterPath
-                
+                CoreDataManager.shared.saveData { (_, _) in
+                    getRecentSearches { }
+                }
+            } else {
+                // If record is available remove and re-add in database to maintain sorting
+                if let lastRecord = records?.first {
+                    CoreDataManager.shared.deleteData(record: lastRecord) { (_, _) in }
+                }
                 CoreDataManager.shared.saveData { (_, _) in
                     getRecentSearches { }
                 }

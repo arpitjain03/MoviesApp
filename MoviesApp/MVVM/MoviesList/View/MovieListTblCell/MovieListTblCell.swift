@@ -31,6 +31,6 @@ class MovieListTblCell: UITableViewCell {
         lblMovieName.text = model.originalTitle
         lblReleaseDate.text = model.releaseDate
         lblRating.text = model.voteAverage?.description
-        imgView.setImageUsingKF(string: model.posterPath, placeholder: nil)
+        imgView.setImageUsingKF(string: model.posterPath, placeholder: PlaceHolderImages.poster)
     }
 }

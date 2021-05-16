@@ -66,7 +66,7 @@ class MoviesListVC: BaseViewController {
         objSearchBar.text = ""
         isSearchActive = false
         objMoviesVM.reset()
-        getMoviesList()
+        getMoviesList(isSilent: true)
     }
     
     /// Function to configure search bar
@@ -85,10 +85,10 @@ class MoviesListVC: BaseViewController {
     }
     
     /// Function to fecth movies from server
-    private func getMoviesList() {
+    private func getMoviesList(isSilent: Bool = false) {
             
         objMoviesVM.updatePageInfo(1)
-        objMoviesVM.getMoviesList { [weak self] _ in
+        objMoviesVM.getMoviesList(isSilent) { [weak self] _ in
             self?.tblViewList?.reloadData()
             self?.refreshControl.endRefreshing()
         }

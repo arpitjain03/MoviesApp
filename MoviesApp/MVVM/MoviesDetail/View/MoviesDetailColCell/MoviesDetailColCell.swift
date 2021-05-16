@@ -17,4 +17,17 @@ class MoviesDetailColCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    // MARK: - Configuration Methods
+
+    func configure(model: CastModel) {
+        imgView.cornerRadius = imgView.frame.height/2
+        imgView.setImageUsingKF(string: model.profilePath, placeholder: #imageLiteral(resourceName: "icon-avtar"))
+        lblName.text = model.originalName
+    }
+    
+    func configure(model: Movie) {
+        imgView.setImageUsingKF(string: model.posterPath, placeholder: #imageLiteral(resourceName: "icon-placeholder.pdf"))
+        lblName.text = model.originalTitle
+    }
 }
