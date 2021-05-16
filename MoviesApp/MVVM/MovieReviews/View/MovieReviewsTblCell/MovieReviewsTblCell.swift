@@ -25,4 +25,23 @@ class MovieReviewsTblCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    func configure(_ model: Review) {
+        
+        lblName.text = model.author
+        if let rating = model.authorDetails?.rating {
+            lblRating.text = rating.description
+        } else {
+            lblRating.text = "0.0"
+        }
+        lblReview.text = model.content
+        
+        // From server URL not coming proper string has extra / at startIndex.
+        // So need to remove it manually
+        let avatarPath = model.authorDetails?.avatarPath ?? ""
+        let newString = String(avatarPath.dropFirst())
+        imgViewUser.setImageKF(string: newString, placeholder: PlaceHolderImages.avatar)
+        
+        lblRatedAt.text = model.createdAt?.getDateAsAgo()
+    }
+    
 }

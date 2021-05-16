@@ -2,16 +2,16 @@
 //  MovieReviewsModel.swift
 //  MoviesApp
 //
-//  Created by Arpit Jain - IndiaNIC on 15/05/21.
+//  Created by Arpit Jain on 15/05/21.
 //
 
 import Foundation
 
 // MARK: - MovieReviewsModel
 struct MovieReviewsModel: Codable {
-    let id, page: Int?
-    let results: [Result]?
-    let totalPages, totalResults: Int?
+    var id, page: Int?
+    var results: [Review]?
+    var totalPages, totalResults: Int?
 
     enum CodingKeys: String, CodingKey {
         case id, page, results
@@ -21,7 +21,7 @@ struct MovieReviewsModel: Codable {
 }
 
 // MARK: - Result
-struct Result: Codable {
+struct Review: Codable {
     let author: String?
     let authorDetails: AuthorDetails?
     let content, createdAt, id, updatedAt: String?
@@ -41,7 +41,7 @@ struct Result: Codable {
 // MARK: - AuthorDetails
 struct AuthorDetails: Codable {
     let name, username, avatarPath: String?
-    let rating: Int?
+    let rating: Float?
 
     enum CodingKeys: String, CodingKey {
         case name, username

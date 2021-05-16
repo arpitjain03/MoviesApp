@@ -34,5 +34,5 @@ public extension UITableView {
     func registerNib<T: UITableViewCell>(withCellClass name: T.Type) {
         register(UINib(nibName: String(describing: name), bundle: Bundle.main), forCellReuseIdentifier: String(describing: name))
     }
-    
+
 }
