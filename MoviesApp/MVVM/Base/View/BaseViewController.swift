@@ -8,16 +8,6 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-
-    // MARK: - Status Bar Setup
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        return false
-    }
     
     // MARK: - View Controller Methods
     

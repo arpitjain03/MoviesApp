@@ -43,7 +43,7 @@ class MoviesDetailVC: BaseViewController {
 
     /// Function to show hide similar movies
     /// - Parameter hide: pass true for  hide
-    func showHideSimilarMovies(_ hide: Bool) {
+    public func showHideSimilarMovies(_ hide: Bool) {
         if hide {
             lblSimilarMoviesTitle.isHidden = true
             cvMoviesHeightConstraint.constant = 0
@@ -51,6 +51,12 @@ class MoviesDetailVC: BaseViewController {
             lblSimilarMoviesTitle.isHidden = false
             cvMoviesHeightConstraint.constant = 135
         }
+    }
+    
+    /// Function to register Nib
+    public func registerNib() {
+        cvCredits.registerNib(withCellClass: MoviesDetailColCell.self)
+        cvSimilarMovies.registerNib(withCellClass: MoviesDetailColCell.self)
     }
     
     // MARK: - Private Methods
@@ -93,12 +99,6 @@ class MoviesDetailVC: BaseViewController {
             let strHm = "\(minutes / 60)h \(minutes % 60)m"
             lblTime.text = strHm
         }
-    }
-    
-    /// Function to register Nib
-    private func registerNib() {
-        cvCredits.registerNib(withCellClass: MoviesDetailColCell.self)
-        cvSimilarMovies.registerNib(withCellClass: MoviesDetailColCell.self)
     }
     
     // MARK: - Button Action Methods

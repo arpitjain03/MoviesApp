@@ -22,6 +22,8 @@
 		A959E40D264FF9020056CC24 /* RecentSearches+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A959E408264FF9020056CC24 /* RecentSearches+CoreDataProperties.swift */; };
 		A959E40E264FF9020056CC24 /* MoviesApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A959E409264FF9020056CC24 /* MoviesApp.xcdatamodeld */; };
 		A959E413265000ED0056CC24 /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A959E412265000ED0056CC24 /* String+Date.swift */; };
+		A97714E0265146EB00293442 /* MovieDetailVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97714DE265146EB00293442 /* MovieDetailVCTests.swift */; };
+		A97714E1265146EB00293442 /* MoviesListVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97714DF265146EB00293442 /* MoviesListVCTests.swift */; };
 		A9EDDA19264FA287006C1C05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDDA18264FA287006C1C05 /* AppDelegate.swift */; };
 		A9EDDA30264FA288006C1C05 /* MoviesAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDDA2F264FA288006C1C05 /* MoviesAppTests.swift */; };
 		A9EDDA3B264FA288006C1C05 /* MoviesAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDDA3A264FA288006C1C05 /* MoviesAppUITests.swift */; };
@@ -105,6 +107,8 @@
 		A959E408264FF9020056CC24 /* RecentSearches+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RecentSearches+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A959E40A264FF9020056CC24 /* MoviesApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoviesApp.xcdatamodel; sourceTree = "<group>"; };
 		A959E412265000ED0056CC24 /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
+		A97714DE265146EB00293442 /* MovieDetailVCTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailVCTests.swift; sourceTree = "<group>"; };
+		A97714DF265146EB00293442 /* MoviesListVCTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesListVCTests.swift; sourceTree = "<group>"; };
 		A9EDDA15264FA287006C1C05 /* MoviesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9EDDA18264FA287006C1C05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9EDDA2B264FA288006C1C05 /* MoviesAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -312,6 +316,8 @@
 			isa = PBXGroup;
 			children = (
 				A9EDDA2F264FA288006C1C05 /* MoviesAppTests.swift */,
+				A97714DF265146EB00293442 /* MoviesListVCTests.swift */,
+				A97714DE265146EB00293442 /* MovieDetailVCTests.swift */,
 				A9EDDA31264FA288006C1C05 /* Info.plist */,
 			);
 			path = MoviesAppTests;
@@ -846,6 +852,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A97714E1265146EB00293442 /* MoviesListVCTests.swift in Sources */,
+				A97714E0265146EB00293442 /* MovieDetailVCTests.swift in Sources */,
 				A9EDDA30264FA288006C1C05 /* MoviesAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
