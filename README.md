@@ -1,5 +1,5 @@
 
-# Moviezzz
+# Moviezzz [MoviesApp]
 
 > This is an application provides us with movies list, details with rating & reviews. 
 
