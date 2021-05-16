@@ -526,9 +526,9 @@
 		A9EDDABE264FA3AD006C1C05 /* MoviesList */ = {
 			isa = PBXGroup;
 			children = (
-				A9EDDABF264FA3AD006C1C05 /* ViewModel */,
 				A9EDDAC1264FA3AD006C1C05 /* Model */,
 				A9EDDAC4264FA3AD006C1C05 /* View */,
+				A9EDDABF264FA3AD006C1C05 /* ViewModel */,
 			);
 			name = MoviesList;
 			path = MoviesApp/MVVM/MoviesList;
@@ -592,9 +592,9 @@
 		A9EDDAF7264FAA7C006C1C05 /* MoviesDetail */ = {
 			isa = PBXGroup;
 			children = (
-				A9EDDAF8264FAA7C006C1C05 /* ViewModel */,
 				A9EDDAFA264FAA7C006C1C05 /* Model */,
 				A9EDDAFE264FAA7C006C1C05 /* View */,
+				A9EDDAF8264FAA7C006C1C05 /* ViewModel */,
 			);
 			path = MoviesDetail;
 			sourceTree = "<group>";
